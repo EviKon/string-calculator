@@ -10,6 +10,6 @@ class StringCalculator
   end
 
   def more_numbers(string)
-    string.split(/["\n",","]/).inject(0) { |sum, n| sum + n.to_i }
+    string.split(/\D+/).inject(0) { |sum, n| sum + n.to_i }
   end
 end

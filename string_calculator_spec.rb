@@ -27,5 +27,10 @@ RSpec.describe StringCalculator do
       number = "1\n2,3"
       expect(instance.calculator(number)).to eq 6
     end
+
+    it 'returns the sum of the three numbers splitted by multiple delimiters' do
+      number = "///;1\n2,;3"
+      expect(instance.calculator(number)).to eq 6
+    end
   end
 end
