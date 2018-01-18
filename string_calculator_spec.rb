@@ -17,5 +17,15 @@ RSpec.describe StringCalculator do
       number = "1,2"
       expect(instance.calculator(number)).to eq 3
     end
+
+    it 'returns the sum of the two numbers splitted by a new line' do
+      number = "1\n2"
+      expect(instance.calculator(number)).to eq 3
+    end
+
+    it 'returns the sum of the three numbers splitted by a new line and a comma' do
+      number = "1\n2,3"
+      expect(instance.calculator(number)).to eq 6
+    end
   end
 end

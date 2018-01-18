@@ -5,7 +5,11 @@ class StringCalculator
     elsif string.length == 1
       string.to_i
     else
-      string.split(",").inject(0) { |sum, n| sum + n.to_i }
+      more_numbers(string)
     end
+  end
+
+  def more_numbers(string)
+    string.split(/["\n",","]/).inject(0) { |sum, n| sum + n.to_i }
   end
 end
