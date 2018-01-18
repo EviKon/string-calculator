@@ -37,5 +37,25 @@ RSpec.describe StringCalculator do
       number = "-1,-2"
       expect{ instance.calculator(number) }.to raise_error "negatives not allowed-1-2"
     end
+
+    it 'returns the sum of the two numbers when the numbers are less than 1000' do
+      number = "1,2000"
+      expect(instance.calculator(number)).to eq 1
+    end
+
+    it 'returns the sum of the numbers in the string, no matter the string' do
+      number = "//[***]\n1***2***3"
+      expect(instance.calculator(number)).to eq 6
+    end
+
+    it 'returns the sum of the numbers in the string, no matter the string' do
+      number = "//[*][%]\n1*2%3"
+      expect(instance.calculator(number)).to eq 6
+    end
+
+    it 'returns the sum of the numbers in the string, no matter the string' do
+      number = "%,\n1,2,3"
+      expect(instance.calculator(number)).to eq 6
+    end
   end
 end

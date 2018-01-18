@@ -13,7 +13,13 @@ class StringCalculator
     if string.include?("-")
       raise "negatives not allowed" + string.split(",").join
     else
-      string.split(/\D+/).inject(0) { |sum, n| sum + n.to_i }
+      string.split(/\D+/).inject(0) do |sum, n|
+        if n.to_i > 1000
+          sum
+        else
+          sum + n.to_i
+        end
+      end
     end
   end
 end
