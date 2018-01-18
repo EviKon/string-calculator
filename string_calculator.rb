@@ -1,9 +1,11 @@
 class StringCalculator
-  def calculator
-    if ""
+  def calculator(string)
+    if string == ""
       0
-    elsif self.length == 1
-      self.to_i
+    elsif string.length == 1
+      string.to_i
+    else
+      string.split(",").inject(0) { |sum, n| sum + n.to_i }
     end
   end
 end
