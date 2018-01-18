@@ -10,6 +10,10 @@ class StringCalculator
   end
 
   def more_numbers(string)
-    string.split(/\D+/).inject(0) { |sum, n| sum + n.to_i }
+    if string.include?("-")
+      raise "negatives not allowed" + string.split(",").join
+    else
+      string.split(/\D+/).inject(0) { |sum, n| sum + n.to_i }
+    end
   end
 end
